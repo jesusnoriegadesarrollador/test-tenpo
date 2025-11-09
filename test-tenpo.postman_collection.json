@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Test Tenpo API - Completa",
+    "_postman_id": "abcd-1234-efgh-5678",
+    "description": "Colección completa para API Test Tenpo: cálculos, caché y historial",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Calcular exitoso",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"numberOne\": 100,\n  \"numberTwo\": 200\n}" },
+        "url": { "raw": "http://localhost:8080/api/v1/calculate", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "calculate"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Calcular usando caché",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"numberOne\": 50,\n  \"numberTwo\": 50\n}" },
+        "url": { "raw": "http://localhost:8080/api/v1/calculate", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "calculate"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Calcular error total",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"numberOne\": 10,\n  \"numberTwo\": 10\n}" },
+        "url": { "raw": "http://localhost:8080/api/v1/calculate", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "calculate"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Historial de llamadas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/calculate/history?page=0&size=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "calculate", "history"],
+          "query": [{ "key": "page", "value": "0" }, { "key": "size", "value": "10" }]
+        }
+      },
+      "response": []
+    }
+  ]
+}
